@@ -8,4 +8,4 @@ prove will stream into a newly opened panel.  The panel will automatically be hi
 completes if all tests pass, and will remain visible otherwise.  The output pane visibility can be toggled
 with the Show/Hide test output toggle.
 
-![A screenshot of your package](https://github.com/perljedi/atom-perl-prove/atom-perl-prove-screenshot.png)
+![Screenshot of Perl-Prove output](https://raw.githubusercontent.com/perljedi/atom-perl-prove/master/atom-perl-prove-screenshot.png)
