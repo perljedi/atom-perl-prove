@@ -2,4 +2,10 @@
 
 Run tests for your perl based project using `prove` from within atom.
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+When activated, this package will check what the base directory for the git repository for the current
+file, and execute `prove -lr t` from within that directory.  While tests are running, output from
+prove will stream into a newly opened panel.  The panel will automatically be hidden when the command
+completes if all tests pass, and will remain visible otherwise.  The output pane visibility can be toggled
+with the Show/Hide test output toggle.
+
+![A screenshot of your package](https://github.com/perljedi/atom-perl-prove/atom-perl-prove-screenshot.png)
