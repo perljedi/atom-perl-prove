@@ -1,0 +1,18 @@
+{
+  "name": "atom-perl-prove",
+  "main": "./lib/atom-perl-prove",
+  "version": "0.0.0",
+  "description": "Stuff and Things for perl",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "atom-perl-prove:run-tests"
+  },
+  "repository": "https://github.com/atom/atom-perl-prove",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}

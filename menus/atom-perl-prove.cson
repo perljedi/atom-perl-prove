@@ -1,0 +1,26 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Run Perl-Prove'
+      'command': 'atom-perl-prove:run-tests'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Perl-Prove'
+      'submenu': [
+        {
+          'label': 'Run Tests'
+          'command': 'atom-perl-prove:run-tests'
+        },
+        {
+          'label': 'Hide Test Output'
+          'command': 'atom-perl-prove:clear-output'
+        }
+      ]
+    ]
+  }
+]
