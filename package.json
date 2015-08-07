@@ -2,7 +2,7 @@
   "name": "atom-perl-prove",
   "main": "./lib/atom-perl-prove",
   "version": "0.1.0",
-  "description": "Stuff and Things for perl",
+  "description": "Run perl Tests within Atom",
   "keywords": [
     "perl",
     "testing",
