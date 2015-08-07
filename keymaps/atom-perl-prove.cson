@@ -8,5 +8,5 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/behind-atom-keymaps-in-depth
 'atom-workspace':
-  'ctrl-alt-o': 'atom-perl-prove:run-tests'
-  'ctrl-alt-shift-o': 'atom-perl-prove:clear-output'
+  'ctrl-shift-t': 'atom-perl-prove:run-tests'
+  'ctrl-alt-shift-t': 'atom-perl-prove:clear-output'

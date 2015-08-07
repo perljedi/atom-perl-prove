@@ -17,7 +17,7 @@
           'command': 'atom-perl-prove:run-tests'
         },
         {
-          'label': 'Hide Test Output'
+          'label': 'Show/Hide Test Output'
           'command': 'atom-perl-prove:clear-output'
         }
       ]
