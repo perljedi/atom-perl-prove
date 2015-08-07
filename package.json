@@ -1,12 +1,12 @@
 {
   "name": "atom-perl-prove",
   "main": "./lib/atom-perl-prove",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Stuff and Things for perl",
   "keywords": [
-      "perl",
-      "testing",
-      "prove"
+    "perl",
+    "testing",
+    "prove"
   ],
   "activationCommands": {
     "atom-workspace": "atom-perl-prove:run-tests"
@@ -16,6 +16,5 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
