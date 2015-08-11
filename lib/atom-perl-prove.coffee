@@ -41,8 +41,7 @@ module.exports = AtomPerlProve =
 
         base_path = this.execSync("/usr/bin/git", new Directory(atom.workspace.getActiveTextEditor().getPath()).getParent().getPath(), "", ["rev-parse", "--show-toplevel"]).stdout.trim()
 
-        process.env.PERL5LIB = "/home/dave/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/dave/perl5/lib/perl5:./lib:/data/doppler-dev/common/lib"
-        # # .PERL5LIB="/home/dave/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/dave/perl5/lib/perl5:./lib:/data/doppler-dev/common/lib"
+        process.env.PERL5LIB = process.env.HOME + "/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:"+process.env.HOME + "/perl5/lib/perl5:./lib"
         @atomPerlProveView.appendOutput "Running tests in "+ base_path
         options =
             cwd: "/data/doppler-dev/storage"
