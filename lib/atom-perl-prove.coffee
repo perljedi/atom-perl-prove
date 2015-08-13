@@ -9,6 +9,10 @@ module.exports = AtomPerlProve =
     outputPanel: null
     subscriptions: null
     process: null
+    config:
+        perlLib:
+            type: 'string'
+            default: process.env.HOME + "/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:"+process.env.HOME + "/perl5/lib/perl5:./lib"
 
     activate: (state) ->
 
@@ -41,7 +45,7 @@ module.exports = AtomPerlProve =
 
         base_path = this.execSync("/usr/bin/git", new Directory(atom.workspace.getActiveTextEditor().getPath()).getParent().getPath(), "", ["rev-parse", "--show-toplevel"]).stdout.trim()
 
-        process.env.PERL5LIB = process.env.HOME + "/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:"+process.env.HOME + "/perl5/lib/perl5:./lib"
+        process.env.PERL5LIB = atom.config.get('atom-perl-prove.perlLib')
         @atomPerlProveView.appendOutput "Running tests in "+ base_path
         options =
             cwd: "/data/doppler-dev/storage"
