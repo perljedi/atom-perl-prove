@@ -8,9 +8,6 @@
     "testing",
     "prove"
   ],
-  "activationCommands": {
-    "atom-workspace": "atom-perl-prove:run-tests"
-  },
   "repository": "https://github.com/perljedi/atom-perl-prove",
   "license": "MIT",
   "engines": {

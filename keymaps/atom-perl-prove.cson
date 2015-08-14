@@ -10,3 +10,4 @@
 'atom-workspace':
   'ctrl-shift-t': 'atom-perl-prove:run-tests'
   'ctrl-alt-shift-t': 'atom-perl-prove:clear-output'
+  'ctrl-alt-shift-a': 'atom-perl-prove:toggle-auto-run'

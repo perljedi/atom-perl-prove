@@ -19,6 +19,10 @@
         {
           'label': 'Show/Hide Test Output'
           'command': 'atom-perl-prove:clear-output'
+        },
+        {
+          'label': 'Enable/Disable auto-run'
+          'command': 'atom-perl-prove:toggle-auto-run'
         }
       ]
     ]

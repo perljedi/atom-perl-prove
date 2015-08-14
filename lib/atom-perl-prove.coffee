@@ -3,12 +3,11 @@ AtomPerlProveView = require './atom-perl-prove-view'
 {spawnSync} = require('child_process')
 {BufferedProcess} = require('atom')
 
-
 module.exports = AtomPerlProve =
     atomPerlProveView: null
     outputPanel: null
-    subscriptions: null
-    process: null
+    subscriptions: new CompositeDisposable
+    runOnSave: false
     config:
         perlLib:
             type: 'string'
@@ -17,19 +16,36 @@ module.exports = AtomPerlProve =
     activate: (state) ->
 
         # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
-        @subscriptions = new CompositeDisposable
+        # @subscriptions = new CompositeDisposable
 
-        # Register command that toggles this view
         @subscriptions.add atom.commands.add 'atom-workspace', 'atom-perl-prove:run-tests': => @runTests()
         @subscriptions.add atom.commands.add 'atom-workspace', 'atom-perl-prove:clear-output': => @clearOutput()
+        @subscriptions.add atom.commands.add 'atom-workspace', 'atom-perl-prove:toggle-auto-run': => @toggleAutoRun()
+        @subscriptions.add atom.workspace.observeTextEditors (editor) => @subscribeToSaveEvents(editor)
+
+    subscribeToSaveEvents: (editor) ->
+        @subscriptions.add editor.onDidSave => @autoRun()
 
     deactivate: ->
         @outputPanel.destroy()
         @subscriptions.dispose()
         @atomPerlProveView.destroy()
 
+    toggleAutoRun: ->
+        console.log("toggling")
+        if @runOnSave
+            atom.notifications.addInfo "Disabling auto-run"
+            @runOnSave = false
+        else
+            atom.notifications.addInfo "Enabling auto-run"
+            @runOnSave = true
+
     serialize: ->
         atomPerlProveViewState: @atomPerlProveView.serialize()
+
+    autoRun: ->
+        if @runOnSave
+            @runTests()
 
     clearOutput: ->
         if @outputPanel.isVisible()
@@ -40,6 +56,7 @@ module.exports = AtomPerlProve =
     runTests: ->
         @atomPerlProveView = new AtomPerlProveView()
         @atomPerlProveView.initialize()
+
         atom.notifications.addSuccess "Running Tests"
         @outputPanel = atom.workspace.addRightPanel(item: @atomPerlProveView)
 
