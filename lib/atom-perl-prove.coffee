@@ -73,7 +73,7 @@ module.exports = AtomPerlProve =
         stderr = (data) => @atomPerlProveView.appendError data
         exit = (data) =>
             if data != 0
-                atom.notifications.addWarning "Test Faiulures"
+                atom.notifications.addWarning "Test Failures"
             else
                 atom.notifications.addSuccess "All Tests Pass"
                 @outputPanel.hide()
