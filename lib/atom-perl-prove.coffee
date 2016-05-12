@@ -12,6 +12,9 @@ module.exports = AtomPerlProve =
         perlLib:
             type: 'string'
             default: process.env.HOME + "/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:"+process.env.HOME + "/perl5/lib/perl5:./lib"
+        proveCmd:
+            type: 'string'
+            default: "/usr/local/bin/prove"
 
     activate: (state) ->
 
@@ -77,7 +80,7 @@ module.exports = AtomPerlProve =
             else
                 atom.notifications.addSuccess "All Tests Pass"
                 @outputPanel.hide()
-        command = "/usr/local/bin/prove"
+        command = atom.config.get('atom-perl-prove.proveCmd')
         new BufferedProcess({command, args, options, stdout, stderr, exit})
 
     appendData: (data) ->
