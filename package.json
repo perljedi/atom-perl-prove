@@ -1,7 +1,7 @@
 {
   "name": "atom-perl-prove",
   "main": "./lib/atom-perl-prove",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Run perl Tests within Atom",
   "keywords": [
     "perl",
